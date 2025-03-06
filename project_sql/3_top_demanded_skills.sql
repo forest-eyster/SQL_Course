@@ -16,6 +16,8 @@ FROM
     INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 WHERE
     job_title_short = 'Data Analyst'
+    -- AND job_location LIKE '%, FL'
+    AND job_work_from_home = TRUE -- remote
 GROUP BY
     skills
 ORDER BY 
