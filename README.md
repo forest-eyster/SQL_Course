@@ -328,4 +328,22 @@ LIMIT 25;
 With the change of focus, we can see the salary raise by 20,000 or 40,000. These skills will be important to help my productivity and analytical skills when I want to increase my salary.
 
 # What I Learned
+Throughout this analysis adventure, I have mastered the basics and some advanced techniques of SQL for my journey to become a Data Analyst. 
+
+- **Complex Query Crafting**f - Skillfully used Common Table Expressions to create complex queries to analyze data.
+
+- **Joining Tables** - Combined datasets to expand the initial dataset and increase my analytical prowess. 
+
+- **Data Aggregation** - Got skilled with GROUP BY and HAVING clauses. Used COUNT(), ROUND(), and AVG() function to help summerize data.
+
 # Conclusions
+### Insights
+With the conclusion of my analysis, here are my final insights. 
+- **What are the top-paying data analyst jobs?** There is a wide range for salaries for remote and Florida positions. However, the highest yearly average is $650,000 for Data Analyst remotely.
+- **What skills are required for the top-paying data analyst jobs?** SQL is utilized in the highest paying jobs as a data analyst for remote and Florida roles. Making SQL a critical skill to learn and master.  
+- **What are the skills most in demand by a data analyst?** SQL is held in hgh esteem for data analyst jobs, which makes it prised for job seekers.
+- **What are the top skills based on salary?** Skills with higher salaries require speciailized or niche expertise, such as SVN, Solidty, and Couchbase.
+- **What are the most optimal skills to learn for a data analyst?** SQL leads in demands and holds a sufficient average yearly salary. Kaka leads in average yearly salary with a fair few demand. However, it is to low compared to SQL making it the most optimal skill for the data analyst job market.
+
+### Closing Thoughts
+...
