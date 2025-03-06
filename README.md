@@ -55,8 +55,6 @@ LIMIT 10;
 ![Top_Paying_Remote](assets/Top_Paying_Jobs_Anywhere.png)
 *This graph was created in Tableau to easily visualize the query*
 
-Here is the breakdown of the query:
-
 We can see that there is a wide range of salaries among positions related to data analyst. The average highest paid job is Data Analyst, coming in at $650,000 a year, dropping around to $184,000 a year. This shows there is significant salary potential. There is also a wide range of data analyst roles such as Director of Analytics, Marketing Data Analyst, and even ERM Data Analyst. There is a lot of exploring for a data analyst.
 
 Now let's switch the filter to help me locally. To do that, I only need to change the job comparison to look for cities in Florida.
@@ -84,8 +82,6 @@ LIMIT 10;
 
 ![Top_Paying_Remote](assets/Top_Paying_Jobs_Florida.png)
 *This graph was created in Tableau to easily visualize the query*
-
-Here is the breakdown of the query:
 
 For this query we have a dramatic change. The new highest yearly salary average is $375,000 to $150,000. This is because we are looking at a specified location instead of anywhere. So if I want a higher yearly salary, I would need to look outside of Florida. There is still a wide variety of jobs from the Head of Infrastructure and Management & Data Analysis to Mid-Level BI Analyst.
 
@@ -128,8 +124,6 @@ ORDER BY
 ![Top_Skills_Remote](assets/Skill_Count_TPJ_Remote.png)
 *This graph was created in Tableau to visualize the skill count for the highest paying remote jobs*
 
-Here is the breakdown of the query:
-
 We can see from the query that SQL, Python, and Tableau are the top three skills that are used for the highest-paying remote jobs. SQL is used in eight out of the top ten, and Python is used in seven out of ten. This makes SQL the most valued skill for data analysts. Following the top three skills, we have R, Snowflake, Pandas, and Excel. These are important skills, but just not as highly valued.
 
 Now I want to change the focus of the job location to Florida.
@@ -167,8 +161,6 @@ ORDER BY
 ![Top_Skills_Florida](assets/Skill_Count_TPJ_Florida.png)
 *This graph was created in Tableau to visualize the skill count for the highest paying Florida jobs*
 
-Here is the breakdown of the query:
-
 In this query, there is a fewer skill count. The top skills are SQL, Excel, Tableau, and Oracle. The following skills are Word, SQL Server, and Flow. With this, we can see a slight skill change focus by location. However, SQL and Tableau are essential skills in the highest-paying jobs in Florida.
 
 ### 3) What are the skills most in demand by a data analyst?
@@ -192,6 +184,8 @@ ORDER BY
     demand_count DESC
 LIMIT 10;
 ```
+<p align="center">
+<strong>Top 10 Skills in High Demand</strong>
 
 | Skill          | Demand Count |
 |----------------|--------------|
@@ -206,12 +200,15 @@ LIMIT 10;
 | Word           | 13591        |
 | Sap            | 11297        |
 
-Here is the breakdown of the most in-demand skills for data analysts in 2023:
+</p>
 
 SQL and Tableau are near the top of the list again, making these skills essential for a data analyst. We can also see Python, Excel, R, and Power BI are vital technical skills to learn.
 
 ### 4) What are the top skills based on salary?
 
+For this query, I wanted to know which skills are the highest paying based on average yearly salary. I am not focusing on location again, because I want to know for the future what skills I should learn for a higher pay raise.
+
+*Below is the SQL query and table:*
 ``` sql
 SELECT 
     skills,
@@ -229,8 +226,8 @@ ORDER BY
     average_salary DESC
 LIMIT 10;
 ```
-
-TEXT
+<p align="center">
+<strong>Highest Yearly Average Salary of the Top 10 Skills for Data Analyst</strong>
 
 | Skill          | Average Salary ($) |
 |----------------|--------------------|
@@ -239,12 +236,57 @@ TEXT
 | Couchbase      | 160,515.00 |
 | Datarobot      | 155,485.50 |
 | Golang         | 155,000.00 |
-| Mxnet          | 149,000.00 |
+| MXNet          | 149,000.00 |
 | Dplyr          | 147,633.33 |
 | VMware         | 147,500.00 |
 | Terraform      | 146,733.83 |
-| Twillio        | 138,500.00 |
+| Twilio         | 138,500.00 |
+
+</p>
+
+From the table I see a lot of skills I don’t know and a few I do know. So I had to do some internet searching. Skills like Terraform, Golang, and VMware help improve cloud storage. Datarobot and MXNet are helpful machine learning tools for analysis. SVN is the highest average salary and it is used to help organize files with a large group of developers working on a project. These skills are additive skills to help improve productivity, data sourcing, and problem-solving.
+
 ### 5) What are the most optimal skills to learn for a data analyst?
+
+Now I want to combine the previous two queries to pinpoint skills that have high demand and a high salary. This will offer strategic skill development. 
+
+*Below is the SQL query and table:*
+``` sql
+SELECT
+    skills_dim.skill_id,
+    skills_dim.skills,
+    COUNT(skills_job_dim.job_id) AS demand_count,
+    ROUND(AVG(job_postings_fact.salary_year_avg), 2) AS avg_salary
+FROM job_postings_fact
+    INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+    INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    job_title_short = 'Data Analyst'
+    AND salary_year_avg IS NOT NULL
+GROUP BY
+    skills_dim.skill_id
+ORDER BY
+    demand_count DESC,
+    avg_salary DESC
+LIMIT 25;
+```
+
+<p align="center">
+<strong>The Most Optimal Skills for Data Analyst in 2023 by Demand</strong>
+
+| Skill ID | Skill       | Demand Count | Average Salary($) |
+|----------|-------------|--------------|---|
+| 0        | SQL         | 3083         |  96,435.33  |
+| 181      | Excel       | 2143         |  86,418.90  |
+| 1        | Python      | 1840         | 101,511.85 |
+| 182      | Tableau     | 1659         |  97,978.08  |
+| 5        | R           | 1073         |  98.707.80  |
+| 183      | Power BI    | 1044         |  92,323.60  |
+<strong>...</strong>
+
+</p>
+
+Now this table is organized by the demand of skills. We can still see the huge demand for SQL, Excel, Python, Tableau, and R. They range from 86,000 to 102,000. These skills are great for entry and mid-level positions. However, what skills would be beneficial for me to learn to increase my salary? For this I need to change my organizational focus to high salary and have a demand.
 
 ``` sql
 SELECT
@@ -258,7 +300,6 @@ FROM job_postings_fact
 WHERE
     job_title_short = 'Data Analyst'
     AND salary_year_avg IS NOT NULL
-    AND job_work_from_home = TRUE
 GROUP BY
     skills_dim.skill_id
 HAVING
@@ -269,20 +310,22 @@ ORDER BY
 LIMIT 25;
 ```
 
-TEXT
+<p align="center">
+<strong>The Most Optimal Skills for Data Analyst in 2023 by Salary</strong>
 
 | Skill ID | Skill       | Demand Count | Average Salary($) |
 |----------|-------------|--------------|---|
-| 8        | Go          | 27           | 115,319.89 |
-| 234      | Confluence  | 11           | 114,209.91 |
-| 97       | Hadoop      | 22           | 113,192.57 |
-| 80       | Snowflake   | 37           | 112,947.97 |
-| 74       | Azure       | 34           | 111,225.10 |
-| 77       | Bigquery    | 13           | 109,653.85 |
-| 76       | AWS         | 32           | 108,317.30 |
-| 4        | Java        | 17           | 106,906.44 |
-| 194      | Ssis        | 12           | 106,683.33 |
-| 233      | Jira        | 20           | 104,917.90 |
+| 98       | Kafka       | 40           | 129,999.16 |
+| 101      | Pytorch     | 20           | 125,226.20 |
+| 31       | Perl        | 20           | 124,685.75 |
+| 99       | Tensorflow  | 24           | 120,646.83 |
+| 63       | Cassandra   | 11           | 118,406.68 |
+| 219      | Atlassian   | 15           | 117,965.60 |
+<strong>...</strong>
+
+</p>
+
+With the change of focus, we can see the salary raise by 20,000 or 40,000. These skills will be important to help my productivity and analytical skills when I want to increase my salary.
 
 # What I Learned
 # Conclusions
