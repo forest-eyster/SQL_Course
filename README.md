@@ -184,7 +184,7 @@ ORDER BY
     demand_count DESC
 LIMIT 10;
 ```
-<p align="center">
+<div align="center">
 <strong>Top 10 Skills in High Demand</strong>
 
 | Skill          | Demand Count |
@@ -200,7 +200,7 @@ LIMIT 10;
 | Word           | 13591        |
 | Sap            | 11297        |
 
-</p>
+</div>
 
 SQL and Tableau are near the top of the list again, making these skills essential for a data analyst. We can also see Python, Excel, R, and Power BI are vital technical skills to learn.
 
@@ -226,7 +226,7 @@ ORDER BY
     average_salary DESC
 LIMIT 10;
 ```
-<p align="center">
+<div align="center">
 <strong>Highest Yearly Average Salary of the Top 10 Skills for Data Analyst</strong>
 
 | Skill          | Average Salary ($) |
@@ -242,7 +242,7 @@ LIMIT 10;
 | Terraform      | 146,733.83 |
 | Twilio         | 138,500.00 |
 
-</p>
+</div>
 
 From the table I see a lot of skills I don’t know and a few I do know. So I had to do some internet searching. Skills like Terraform, Golang, and VMware help improve cloud storage. Datarobot and MXNet are helpful machine learning tools for analysis. SVN is the highest average salary and it is used to help organize files with a large group of developers working on a project. These skills are additive skills to help improve productivity, data sourcing, and problem-solving.
 
@@ -271,7 +271,7 @@ ORDER BY
 LIMIT 25;
 ```
 
-<p align="center">
+<div align="center">
 <strong>The Most Optimal Skills for Data Analyst in 2023 by Demand</strong>
 
 | Skill ID | Skill       | Demand Count | Average Salary($) |
@@ -284,7 +284,7 @@ LIMIT 25;
 | 183      | Power BI    | 1044         |  92,323.60  |
 <strong>...</strong>
 
-</p>
+</div>
 
 Now this table is organized by the demand of skills. We can still see the huge demand for SQL, Excel, Python, Tableau, and R. They range from 86,000 to 102,000. These skills are great for entry and mid-level positions. However, what skills would be beneficial for me to learn to increase my salary? For this I need to change my organizational focus to high salary and have a demand.
 
@@ -310,7 +310,7 @@ ORDER BY
 LIMIT 25;
 ```
 
-<p align="center">
+<div align="center">
 <strong>The Most Optimal Skills for Data Analyst in 2023 by Salary</strong>
 
 | Skill ID | Skill       | Demand Count | Average Salary($) |
@@ -323,27 +323,29 @@ LIMIT 25;
 | 219      | Atlassian   | 15           | 117,965.60 |
 <strong>...</strong>
 
-</p>
+</div>
 
 With the change of focus, we can see the salary raise by 20,000 or 40,000. These skills will be important to help my productivity and analytical skills when I want to increase my salary.
 
 # What I Learned
-Throughout this analysis adventure, I have mastered the basics and some advanced techniques of SQL for my journey to become a Data Analyst. 
+Throughout this adventure in analysis, I have mastered the basics and some advanced SQL techniques for my journey to become a data analyst. 
 
-- **Complex Query Crafting**f - Skillfully used Common Table Expressions to create complex queries to analyze data.
+- **Complex Query Crafting** - Skillfully used Common Table Expressions to create complex queries to analyze data.
 
 - **Joining Tables** - Combined datasets to expand the initial dataset and increase my analytical prowess. 
 
-- **Data Aggregation** - Got skilled with GROUP BY and HAVING clauses. Used COUNT(), ROUND(), and AVG() function to help summerize data.
+- **Data Aggregation** - Got skilled with GROUP BY and HAVING clauses. Used COUNT(), ROUND(), and AVG() functions to help summarize data.
 
 # Conclusions
 ### Insights
-With the conclusion of my analysis, here are my final insights. 
-- **What are the top-paying data analyst jobs?** There is a wide range for salaries for remote and Florida positions. However, the highest yearly average is $650,000 for Data Analyst remotely.
-- **What skills are required for the top-paying data analyst jobs?** SQL is utilized in the highest paying jobs as a data analyst for remote and Florida roles. Making SQL a critical skill to learn and master.  
-- **What are the skills most in demand by a data analyst?** SQL is held in hgh esteem for data analyst jobs, which makes it prised for job seekers.
-- **What are the top skills based on salary?** Skills with higher salaries require speciailized or niche expertise, such as SVN, Solidty, and Couchbase.
-- **What are the most optimal skills to learn for a data analyst?** SQL leads in demands and holds a sufficient average yearly salary. Kaka leads in average yearly salary with a fair few demand. However, it is to low compared to SQL making it the most optimal skill for the data analyst job market.
+With the conclusion of my analysis, here are my final insights.
+- **What are the top-paying data analyst jobs?** There is a wide range for salaries for remote and Florida positions. However, the highest yearly average is $650,000 for a remote Data Analyst.
+- **What skills are required for the top-paying data analyst jobs?** SQL is utilized in the highest paying jobs as a data analyst for remote and Florida roles. Making SQL a critical skill to learn and master.
+- **What are the skills most in demand by a data analyst?** SQL is highly esteemed for data analyst jobs, making it prized for job seekers.
+- **What are the top skills based on salary?** Skills related with higher salaries require specialized or niche expertise, such as SVN, Solidity, and Couchbase.
+- **What are the most optimal skills to learn for a data analyst?** SQL leads in demands and holds a sufficient average yearly salary. Kafka leads in average yearly salary with a fair few demands. However, it is too low compared to SQL. Making SQL the most optimal skill for the data analyst job market.
 
 ### Closing Thoughts
-...
+This analysis served as a project to enhance my expertise in SQL, Tableau, git, and analytical skills. While working on this project, I gained valuable insights into the data analyst job market. These insights reveal which skills are in high demand and offer high salaries. This will provide an advantage for me and anyone looking to enter the data analyst field.
+
+Thank you for joining me on this adventure.
